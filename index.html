@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum RNG & Encryption</title>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #181818;
+            color: #e0e0e0;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 26px;
+            font-weight: 500;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #222;
+            border-radius: 12px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        video, canvas {
+            width: 100%;
+            max-width: 320px;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 6px;
+            border: none;
+            background: #292929;
+            color: white;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        button {
+            background: #3a3a3a;
+            color: white;
+            border: none;
+            padding: 10px 16px;
+            margin: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s ease, transform 0.1s ease;
+        }
+
+        button:hover {
+            background: #505050;
+            transform: scale(1.02);
+        }
+
+        #output {
+            font-size: 16px;
+            margin-top: 12px;
+            padding: 12px;
+            border-radius: 6px;
+            background: #292929;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Quantum RNG & Encryption</h1>
+
+    <div class="container">
+        <video id="video" autoplay></video>
+        <canvas id="canvas" width="320" height="240"></canvas>
+
+        <br>
+        <button onclick="generateRandomNumber()">Generate Random Number</button>
+        <button onclick="generateRandomBitstream()">Generate Bitstream</button>
+        <button onclick="downloadRandomData()">Download Data</button>
+        <button onclick="getTrueQuantumRandom()">Fetch True QRNG</button>
+
+        <hr>
+
+        <input type="text" id="userInput" placeholder="Enter text to encrypt">
+        <button onclick="encryptWithQRNG()">Encrypt</button>
+
+        <br>
+
+        <input type="text" id="qrngKeyInput" placeholder="Enter QRNG key to decrypt">
+        <button onclick="decryptWithQRNG()">Decrypt</button>
+
+        <p id="output">Your result will appear here.</p>
+        <p id="qrngKeyDisplay"></p> <!-- Added display for QRNG Key -->
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
